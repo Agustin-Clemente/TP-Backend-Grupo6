@@ -1,15 +1,13 @@
-var mysql      = require('mysql2');
-var connection = mysql.createConnection({
-  /* host     : 'localhost',
-  user     : 'root',
-  password : 'agush',
-  database : 'turismo' */
-  host     : "beivyosjyljis0ocyp2p-mysql.services.clever-cloud.com",
+var mysql = require('mysql2');
+
+var pool = mysql.createPool({
+  host     : 'beivyosjyljis0ocyp2p-mysql.services.clever-cloud.com',
   user     : 'uet0p8hxobxcaqkd',
   password : 'llmkUqfw0YAkjHlRCcj0',
-  database : 'beivyosjyljis0ocyp2p'
+  database : 'beivyosjyljis0ocyp2p',
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
- 
-connection.connect();
 
-module.exports = connection;
+module.exports = pool;
