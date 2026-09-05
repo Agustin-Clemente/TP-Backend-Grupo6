@@ -1,10 +1,10 @@
 var mysql = require('mysql2');
 
 var pool = mysql.createPool({
-  host     : 'beivyosjyljis0ocyp2p-mysql.services.clever-cloud.com',
+  host     : 'bvtucyrmnotlhffwbcbl-mysql.services.clever-cloud.com',
   user     : 'uet0p8hxobxcaqkd',
   password : 'llmkUqfw0YAkjHlRCcj0',
-  database : 'beivyosjyljis0ocyp2p',
+  database : 'bvtucyrmnotlhffwbcbl',
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
