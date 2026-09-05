@@ -113,8 +113,13 @@ app.get('/', (req, res) => {
 
     connection.query(query, (error, results) => {
         if (error) {
-            console.error('Error al obtener paquetes:', error);
-            return res.status(500).json({ error: 'Error interno del servidor' });
+            // Devolvemos el objeto de error completo para identificar la causa
+            return res.status(500).json({ 
+                mensaje: 'Error de base de datos',
+                code: error.code,
+                errno: error.errno,
+                sqlMessage: error.sqlMessage 
+            });
         }
         res.json(results);
     });
